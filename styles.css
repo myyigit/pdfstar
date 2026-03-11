@@ -293,6 +293,10 @@ img {
     padding: 6px;
 }
 
+.mobile-cta {
+    display: none;
+}
+
 .hamburger span {
     display: block;
     width: 22px;
@@ -1554,6 +1558,13 @@ img {
         gap: var(--space-md);
         z-index: 99;
     }
+
+    .mobile-cta {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: var(--space-sm);
+    }
 }
 
 @media (max-width: 600px) {
@@ -1579,12 +1590,34 @@ img {
 
     .modal {
         padding: var(--space-lg);
+        width: 95%;
+        margin: 10px auto;
+        max-height: 85vh;
     }
 
     .btn-primary,
     .btn-secondary {
         padding: 12px 20px;
         font-size: 0.9rem;
+    }
+
+    .nav-actions .btn-nav-cta {
+        display: none;
+    }
+
+    .lang-dropdown {
+        right: 0;
+        left: auto;
+    }
+
+    .hero {
+        padding-top: 90px;
+        gap: var(--space-lg);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: var(--space-md);
     }
 }
 
