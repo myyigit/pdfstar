@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDFStar – Tüm PDF Araçları Tek Yerde</title>
+  <meta name="description"
+    content="PDFStar ile PDF dosyalarınızı birleştirin, bölün, sıkıştırın, dönüştürün ve daha fazlasını yapın. Ücretsiz, hızlı ve güvenli." />
+  <meta property="og:title" content="PDFStar – Tüm PDF Araçları Tek Yerde" />
+  <meta property="og:description"
+    content="PDFStar ile PDF dosyalarınızı birleştirin, bölün, sıkıştırın, dönüştürün ve daha fazlasını yapın." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Animated Background -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect width="28" height="28" rx="8" fill="url(#logoGrad)" />
+            <path d="M7 7h8l6 6v8H7V7z" fill="white" opacity="0.9" />
+            <path d="M15 7l6 6h-6V7z" fill="white" opacity="0.5" />
+            <line x1="10" y1="17" x2="18" y2="17" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="10" y1="20" x2="15" y2="20" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linecap="round" />
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#6366f1" />
+                <stop offset="100%" stop-color="#a855f7" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">PDF<span class="logo-accent">Star</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#tools" class="nav-link" data-i18n="nav-tools">Araçlar</a>
+        <a href="#features" class="nav-link" data-i18n="nav-features">Özellikler</a>
+        <a href="#faq" class="nav-link" data-i18n="nav-faq">SSS</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-lang-toggle" id="langToggle" onclick="toggleLang()" title="TR / EN">TR</button>
+        <button class="btn-theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Tema değiştir">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+        </button>
+        <button class="btn-nav-cta" data-i18n="nav-cta" onclick="scrollToTools()">Hemen Başla</button>
+        <button class="hamburger" id="hamburger" aria-label="Menü">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>%100 Ücretsiz &amp; Güvenli</span>
+      </div>
+      <h1 class="hero-title">
+        <span data-i18n="hero-title-1">PDF İşlemleri için</span><br />
+        <span class="gradient-text" data-i18n="hero-title-2">Güçlü Araçlar</span>
+      </h1>
+      <p class="hero-desc" data-i18n="hero-desc">
+        Birleştir, böl, sıkıştır, dönüştür — tüm PDF işlemleriniz<br />
+        tek bir yerde. Kayıt gerekmez.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="scrollToTools()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+            <polyline points="13 2 13 9 20 9" />
+          </svg>
+          <span data-i18n="hero-cta1">Araçları Keşfet</span>
+        </button>
+        <button class="btn-secondary" onclick="openTool('merge')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <polyline points="5 12 12 19 19 12" />
+          </svg>
+          <span data-i18n="hero-cta2">PDF Yükle</span>
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">25+</span>
+          <span class="stat-label">Araç</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Kullanım</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Kayıt</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-card card-1">
+        <div class="fc-icon merge-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+          </svg>
+        </div>
+        <div class="fc-text">
+          <span class="fc-title">PDF Birleştir</span>
+          <span class="fc-sub">2 dosya → 1 PDF</span>
+        </div>
+        <div class="fc-check">✓</div>
+      </div>
+      <div class="floating-card card-2">
+        <div class="fc-icon compress-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <polyline points="4 14 10 14 10 20" />
+            <polyline points="20 10 14 10 14 4" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+            <line x1="3" y1="21" x2="14" y2="10" />
+          </svg>
+        </div>
+        <div class="fc-text">
+          <span class="fc-title">Sıkıştır</span>
+          <span class="fc-sub">%85 küçülme</span>
+        </div>
+        <div class="fc-badge">Hızlı</div>
+      </div>
+      <div class="floating-card card-3">
+        <div class="fc-icon convert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <polyline points="17 1 21 5 17 9" />
+            <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+            <polyline points="7 23 3 19 7 15" />
+            <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+          </svg>
+        </div>
+        <div class="fc-text">
+          <span class="fc-title">Dönüştür</span>
+          <span class="fc-sub">Word, Excel, JPG</span>
+        </div>
+        <div class="fc-check">✓</div>
+      </div>
+      <div class="center-graphic">
+        <div class="pdf-orb">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="url(#pdfGrad)" opacity="0.9" />
+            <polyline points="14 2 14 8 20 8" stroke="white" stroke-width="1.5" />
+            <line x1="8" y1="13" x2="16" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="8" y1="17" x2="13" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            <defs>
+              <linearGradient id="pdfGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#6366f1" />
+                <stop offset="100%" stop-color="#ec4899" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Grid -->
+  <section class="tools-section" id="tools">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="sec-tools-badge">Araçlar</div>
+        <h2 class="section-title" data-i18n="sec-tools-title">İhtiyacınız olan her şey</h2>
+        <p class="section-desc">Profesyonel PDF işlemleri için eksiksiz araç seti</p>
+      </div>
+
+      <!-- Search Box -->
+      <div class="tool-search-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input class="tool-search" id="toolSearch" type="text" placeholder="Araç ara… (örn. birleştir, sıkıştır)"
+          oninput="filterSearch(this.value)" />
+        <button class="tool-search-clear" id="searchClear" onclick="clearSearch()" style="display:none">✕</button>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="category-filter" id="categoryFilter">
+        <button class="cat-btn active" data-cat="all" data-i18n="cat-all">Tümü</button>
+        <button class="cat-btn" data-cat="organize" data-i18n="cat-organize">Düzenle</button>
+        <button class="cat-btn" data-cat="convert" data-i18n="cat-convert">Dönüştür</button>
+        <button class="cat-btn" data-cat="security" data-i18n="cat-security">Güvenlik</button>
+        <button class="cat-btn" data-cat="optimize" data-i18n="cat-optimize">Optimize</button>
+      </div>
+
+      <div class="tools-grid" id="toolsGrid">
+        <!-- Organize -->
+        <div class="tool-card" data-cat="organize" data-tool="merge" onclick="openTool('merge')">
+          <div class="tool-icon-wrap" style="--card-color: #6366f1;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-merge">PDF Birleştir</h3>
+          <p class="tool-desc" data-i18n="tool-merge-desc">Birden fazla PDF'i tek bir belgede birleştirin</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="organize" data-tool="split" onclick="openTool('split')">
+          <div class="tool-icon-wrap" style="--card-color: #8b5cf6;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="9" y1="15" x2="15" y2="15" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-split">PDF Böl</h3>
+          <p class="tool-desc" data-i18n="tool-split-desc">PDF'i sayfa aralıklarına göre parçalara ayırın</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="optimize" data-tool="compress" onclick="openTool('compress')">
+          <div class="tool-icon-wrap" style="--card-color: #ec4899;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="4 14 10 14 10 20" />
+              <polyline points="20 10 14 10 14 4" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+              <line x1="3" y1="21" x2="14" y2="10" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-compress">PDF Sıkıştır</h3>
+          <p class="tool-desc" data-i18n="tool-compress-desc">Kaliteyi koruyarak dosya boyutunu küçültün</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="organize" data-tool="rotate" onclick="openTool('rotate')">
+          <div class="tool-icon-wrap" style="--card-color: #f59e0b;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 4 23 10 17 10" />
+              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-rotate">PDF Döndür</h3>
+          <p class="tool-desc" data-i18n="tool-rotate-desc">Sayfaları 90°, 180° veya 270° döndürün</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="convert" data-tool="pdf-to-word" onclick="openTool('pdf-to-word')">
+          <div class="tool-icon-wrap" style="--card-color: #3b82f6;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="17 1 21 5 17 9" />
+              <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+              <polyline points="7 23 3 19 7 15" />
+              <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-pdf-to-word">PDF → Word</h3>
+          <p class="tool-desc" data-i18n="tool-pdf-to-word-desc">PDF belgelerini düzenlenebilir Word formatına çevirin</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="convert" data-tool="pdf-to-jpg" onclick="openTool('pdf-to-jpg')">
+          <div class="tool-icon-wrap" style="--card-color: #10b981;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-pdf-to-jpg">PDF → JPG</h3>
+          <p class="tool-desc" data-i18n="tool-pdf-to-jpg-desc">Her sayfayı yüksek kaliteli görüntüye dönüştürün</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="convert" data-tool="jpg-to-pdf" onclick="openTool('jpg-to-pdf')">
+          <div class="tool-icon-wrap" style="--card-color: #14b8a6;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-jpg-to-pdf">JPG → PDF</h3>
+          <p class="tool-desc" data-i18n="tool-jpg-to-pdf-desc">Görüntülerinizi PDF belgelerine dönüştürün</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="convert" data-tool="word-to-pdf" onclick="openTool('word-to-pdf')">
+          <div class="tool-icon-wrap" style="--card-color: #0ea5e9;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-word-to-pdf">Word → PDF</h3>
+          <p class="tool-desc" data-i18n="tool-word-to-pdf-desc">Word belgelerini PDF formatına dönüştürün</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="convert" data-tool="excel-to-pdf" onclick="openTool('excel-to-pdf')">
+          <div class="tool-icon-wrap" style="--card-color: #22c55e;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M9 3v18" />
+              <path d="M3 9h18" />
+              <path d="M3 15h18" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-excel-to-pdf">Excel → PDF</h3>
+          <p class="tool-desc" data-i18n="tool-excel-to-pdf-desc">Excel tablolarını PDF olarak kaydedin</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="security" data-tool="protect" onclick="openTool('protect')">
+          <div class="tool-icon-wrap" style="--card-color: #f43f5e;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-protect">PDF Şifrele</h3>
+          <p class="tool-desc" data-i18n="tool-protect-desc">PDF'inizi parola ile koruyun</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="security" data-tool="unlock" onclick="openTool('unlock')">
+          <div class="tool-icon-wrap" style="--card-color: #fb923c;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 9.9-1" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-unlock">PDF Kilidi Aç</h3>
+          <p class="tool-desc" data-i18n="tool-unlock-desc">Şifreli PDF'den korumayı kaldırın</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="organize" data-tool="watermark" onclick="openTool('watermark')">
+          <div class="tool-icon-wrap" style="--card-color: #a78bfa;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-watermark">Filigran Ekle</h3>
+          <p class="tool-desc" data-i18n="tool-watermark-desc">PDF sayfalarına metin veya logo filigranı ekleyin</p>
+          <div class="tool-arrow">→</div>
+        </div>
+        <div class="tool-card" data-cat="organize" data-tool="organize" onclick="openTool('organize')">
+          <div class="tool-icon-wrap" style="--card-color: #818cf8;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="8" y1="6" x2="21" y2="6" />
+              <line x1="8" y1="12" x2="21" y2="12" />
+              <line x1="8" y1="18" x2="21" y2="18" />
+              <line x1="3" y1="6" x2="3.01" y2="6" />
+              <line x1="3" y1="12" x2="3.01" y2="12" />
+              <line x1="3" y1="18" x2="3.01" y2="18" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-organize">Sayfaları Düzenle</h3>
+          <p class="tool-desc" data-i18n="tool-organize-desc">Sürükle-bırak ile sayfa sırasını değiştirin</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="optimize" data-tool="ocr" onclick="openTool('ocr')">
+          <div class="tool-icon-wrap" style="--card-color: #f472b6;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="9" y1="13" x2="15" y2="13" />
+              <line x1="9" y1="17" x2="12" y2="17" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-ocr">OCR PDF</h3>
+          <p class="tool-desc" data-i18n="tool-ocr-desc">Görüntüden metin çıkarın (tesseract.js)</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="organize" data-tool="sign" onclick="openTool('sign')">
+          <div class="tool-icon-wrap" style="--card-color: #06b6d4;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 19l7-7 3 3-7 7-3-3z" />
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+              <path d="M2 2l7.586 7.586" />
+              <circle cx="11" cy="11" r="2" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-sign">PDF İmzala</h3>
+          <p class="tool-desc" data-i18n="tool-sign-desc">El yazısı imzanızı PDF'e ekleyin</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="organize" data-tool="pagenumbers" onclick="openTool('pagenumbers')">
+          <div class="tool-icon-wrap" style="--card-color: #d946ef;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="9" y1="18" x2="15" y2="18" />
+              <line x1="11" y1="14" x2="11" y2="18" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-pagenumbers">Sayfa Numarası Ekle</h3>
+          <p class="tool-desc" data-i18n="tool-pagenumbers-desc">Her sayfaya otomatik numara ekleyin</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="optimize" data-tool="meta" onclick="openTool('meta')">
+          <div class="tool-icon-wrap" style="--card-color: #64748b;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14" />
+              <line x1="12" y1="2" x2="12" y2="6" />
+              <line x1="12" y1="18" x2="12" y2="22" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-meta">Meta Düzenle</h3>
+          <p class="tool-desc" data-i18n="tool-meta-desc">PDF başlık, yazar ve konu bilgilerini düzenleyin</p>
+          <div class="tool-arrow">→</div>
+        </div>
+
+        <div class="tool-card" data-cat="optimize" data-tool="grayscale" onclick="openTool('grayscale')">
+          <div class="tool-icon-wrap" style="--card-color: #78716c;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 2a10 10 0 0 1 0 20" />
+            </svg>
+          </div>
+          <h3 class="tool-name" data-i18n="tool-grayscale">Gri Tona Çevir</h3>
+          <p class="tool-desc" data-i18n="tool-grayscale-desc">Renkli PDF'i siyah-beyaz yapın, boyutu küçültün</p>
+          <div class="tool-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" id="features">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Neden PDFStar?</div>
+        <h2 class="section-title">Rekabetsiz Özellikler</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3>Uçtan Uca Güvenlik</h3>
+          <p>Dosyalarınız tarayıcınızda işlenir. Sunucuya yüklenme olmaz.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </div>
+          <h3>Yıldırım Hızı</h3>
+          <p>WebAssembly ile güçlendirilmiş, saniyeler içinde sonuç alın.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+          </div>
+          <h3>Tamamen Ücretsiz</h3>
+          <p>Sınırsız kullanım, kayıt yok, reklam yok. Gerçekten ücretsiz.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" />
+              <line x1="9" y1="7" x2="15" y2="7" />
+              <line x1="9" y1="11" x2="15" y2="11" />
+              <line x1="9" y1="15" x2="12" y2="15" />
+            </svg>
+          </div>
+          <h3>Yüksek Kalite</h3>
+          <p>İşlemler sonrası orijinal kalite korunur, piksel yitimi olmaz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">SSS</div>
+        <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Dosyalarım güvende mi?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Evet. Tüm işlemler tarayıcınızda gerçekleşir. Dosyalarınız hiçbir zaman sunucularımıza yüklenmez,
+              gizliliğiniz tamamen korunur.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Dosya boyutu sınırı var mı?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Client-side işlem yaptığı için sınır tarayıcınızın RAM kapasitesiyle belirlenir. Genellikle 500MB'a kadar
+              sorunsuz çalışır.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Kayıt olmak gerekiyor mu?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Hayır. Tüm araçları kayıt olmadan ve ücretsiz kullanabilirsiniz. E-posta adresi bile gerekmez.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Hangi tarayıcılar destekleniyor?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Chrome, Firefox, Safari, Edge gibi modern tarayıcıların son sürümleri tam desteklenmektedir.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="logo-icon">
+            <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+              <rect width="28" height="28" rx="8" fill="url(#fLogoGrad)" />
+              <path d="M7 7h8l6 6v8H7V7z" fill="white" opacity="0.9" />
+              <path d="M15 7l6 6h-6V7z" fill="white" opacity="0.5" />
+              <defs>
+                <linearGradient id="fLogoGrad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#6366f1" />
+                  <stop offset="100%" stop-color="#a855f7" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="logo-text">PDF<span class="logo-accent">Nova</span></span>
+        </div>
+        <p class="footer-tagline">Tüm PDF ihtiyaçlarınız için tek adres</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Araçlar</h4>
+          <a href="#" onclick="openTool('merge')">PDF Birleştir</a>
+          <a href="#" onclick="openTool('split')">PDF Böl</a>
+          <a href="#" onclick="openTool('compress')">PDF Sıkıştır</a>
+          <a href="#" onclick="openTool('rotate')">PDF Döndür</a>
+        </div>
+        <div class="footer-col">
+          <h4>Dönüştür</h4>
+          <a href="#" onclick="openTool('pdf-to-word')">PDF → Word</a>
+          <a href="#" onclick="openTool('pdf-to-jpg')">PDF → JPG</a>
+          <a href="#" onclick="openTool('jpg-to-pdf')">JPG → PDF</a>
+          <a href="#" onclick="openTool('word-to-pdf')">Word → PDF</a>
+        </div>
+        <div class="footer-col">
+          <h4>Hakkımızda</h4>
+          <a href="#features">Özellikler</a>
+          <a href="#faq">SSS</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 PDFStar. Tüm haklar saklıdır.</p>
+      <p>Tarayıcınızda güvenle işlenir</p>
+    </div>
+  </footer>
+
+  <!-- Tool Modal -->
+  <div class="modal-overlay" id="toolModal" onclick="closeModal(event)">
+    <div class="modal" id="modalContent">
+      <button class="modal-close" onclick="closeModalBtn()">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- PDF Libraries (CDN, client-side processing) -->
+  <!-- i18n translations (25 languages) -->
+  <script src="translations.js"></script>
+  <!-- Tesseract.js for OCR -->
+  <script src="https://unpkg.com/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    // Configure PDF.js worker
+    if (window.pdfjsLib) {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+  </script>
+  <script src="app.js?v=9"></script>
+</body>
+
+</html>
